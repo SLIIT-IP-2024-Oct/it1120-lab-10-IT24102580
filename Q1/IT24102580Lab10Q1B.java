@@ -5,7 +5,7 @@ public class IT24102580Lab10Q1B {
 
 		assert (number >= 0 && number <= 100) : "Invalid Mark";
 		
-		return "Mark is validated";
+		return "validated";
 
 	}
 	
@@ -35,17 +35,16 @@ public class IT24102580Lab10Q1B {
 		
 	} 
 	
-	// method to calculate valid grade for marks
+	// method to calculate if valid grade assigned for marks
 	public static char isvalidGrade (double mark2) {
+
+		char grade = calculateGrade (mark2);
 		
-		assert (mark2 >= 75 && calculateGrade (mark2) == 'A') : "Incorret Grade assign";
-		assert (mark2 >= 60 && calculateGrade (mark2) == 'B') : "Incorret Grade assign";
-		assert (mark2 >= 50 && calculateGrade (mark2)== 'C') : "Incorret Grade assign";
-		assert (mark2 >= 40 && calculateGrade (mark2) == 'D') : "Incorret Grade assign";
-		assert (mark2 >= 0 && calculateGrade (mark2) == 'F') : "Incorret Grade assign";
+		assert ((mark2 >= 75 && calculateGrade (mark2) == 'A') || (mark2 >= 60 && calculateGrade (mark2) == 'B')) ||
+			(mark2 >= 50 && calculateGrade (mark2) == 'C') || (mark2 >= 40 && calculateGrade (mark2) == 'D') ||
+			(mark2 >= 0 && calculateGrade (mark2) == 'F') : "Invalid grade assigned";
 
-		return calculateGrade (mark2);
-
+		return grade;		
 	}
 
 
